@@ -34,11 +34,7 @@ class GildedRoseTest {
         };
 
         GildedRose app = new GildedRose(items);
-
-        int days = 2;
-        for(int day = 0; day < days; day++) {
-            app.updateQuality();
-        }
+        app.updateQuality();
 
         assertEquals(4, items[0].quality);
         assertEquals(2, items[0].sellIn);
