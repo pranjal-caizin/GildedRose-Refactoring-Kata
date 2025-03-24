@@ -41,6 +41,19 @@ class GildedRoseTest {
     }
 
     @Test
+    void qualityIncreasesTwiceAfterSellByDateForAgedBrieTest() {
+        Item[] items = new Item[] {
+            new Item("Aged Brie", 0, 4)
+        };
+
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(6, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
+
+    @Test
     void qualityAndSellinDoesNotChangeForSulfurasTest() {
         Item[] items = new Item[] {
             new Item("Sulfuras, Hand of Ragnaros", 2, 4),
