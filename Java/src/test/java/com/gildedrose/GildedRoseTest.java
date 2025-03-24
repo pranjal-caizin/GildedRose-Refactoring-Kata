@@ -17,7 +17,7 @@ class GildedRoseTest {
     @Test
     void qualityAndSellinDecreaseBy1ForNormalItemsTest() {
         Item[] items = new Item[] {
-            new Item("item 1", 2, 4)
+            new Item("Normal Item", 2, 4)
         };
 
         GildedRose app = new GildedRose(items);
@@ -47,11 +47,23 @@ class GildedRoseTest {
         };
 
         GildedRose app = new GildedRose(items);
-
         app.updateQuality();
 
         assertEquals(2, items[0].quality);
         assertEquals(-1, items[0].sellIn);
+    }
+
+    @Test
+    void qualityNeverGoesNegativeTest() {
+        Item[] items = new Item[] {
+            new Item("Item", 4, 0)
+        };
+
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(0, items[0].quality);
+        assertEquals(3, items[0].sellIn);
     }
 
 }
