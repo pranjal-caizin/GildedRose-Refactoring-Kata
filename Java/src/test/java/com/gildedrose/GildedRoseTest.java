@@ -109,7 +109,7 @@ class GildedRoseTest {
     void qualityNeverGoesAboveFiftyTest() {
         Item[] items = new Item[] {
             new Item("Aged Brie", 4, 50),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)
+            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49)
         };
 
         GildedRose app = new GildedRose(items);
