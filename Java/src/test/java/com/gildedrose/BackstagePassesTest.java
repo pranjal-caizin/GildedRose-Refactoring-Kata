@@ -47,4 +47,15 @@ public class BackstagePassesTest {
         assertEquals(0, item.quality);
         assertEquals(-1, item.sellIn);
     }
+
+    @Test
+    void qualityNeverExceedsFiftyTest() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
+        BackstagePasses backstagePasses = new BackstagePasses(item);
+
+        backstagePasses.updateQuality();
+
+        assertEquals(50, item.quality);
+        assertEquals(4, item.sellIn);
+    }
 }
