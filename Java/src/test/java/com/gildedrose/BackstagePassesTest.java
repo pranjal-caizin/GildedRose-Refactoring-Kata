@@ -50,7 +50,7 @@ public class BackstagePassesTest {
 
     @Test
     void qualityNeverExceedsFiftyTest() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
         backstagePasses.updateQuality();
