@@ -17,28 +17,41 @@ class GildedRose {
                 case SULFURAS:
                     continue;
                 case AGED_BRIE:
-                    if (item.quality < 50) item.quality++;
-                    item.sellIn--;
-                    if (item.sellIn < 0 && item.quality < 50) item.quality++;
+                    updateQualityAndSellinForAgedBrie(item);
                     break;
                 case BACKSTAGE_PASSES:
-                    if (item.quality < 50) {
-                        item.quality++;
-
-                        if (item.quality < 50) {
-                            if (item.sellIn < 11) item.quality++;
-                            if (item.sellIn < 6) item.quality++;
-                        }
-                    }
-                    item.sellIn--;
-                    if (item.sellIn < 0) item.quality = 0;
+                    updateQualityAndSellinForBackstagePasses(item);
                     break;
                 default:
-                    if (item.quality > 0) item.quality--;
-                    item.sellIn--;
-                    if (item.sellIn < 0 && item.quality > 0) item.quality--;
+                    updateQualityAndSellinForNormalItem(item);
                     break;
             }
         }
     }
+
+    private static void updateQualityAndSellinForNormalItem(Item item) {
+        if (item.quality > 0) item.quality--;
+        item.sellIn--;
+        if (item.sellIn < 0 && item.quality > 0) item.quality--;
+    }
+
+    private static void updateQualityAndSellinForBackstagePasses(Item item) {
+        if (item.quality < 50) {
+            item.quality++;
+
+            if (item.quality < 50) {
+                if (item.sellIn < 11) item.quality++;
+                if (item.sellIn < 6) item.quality++;
+            }
+        }
+        item.sellIn--;
+        if (item.sellIn < 0) item.quality = 0;
+    }
+
+    private static void updateQualityAndSellinForAgedBrie(Item item) {
+        if (item.quality < 50) item.quality++;
+        item.sellIn--;
+        if (item.sellIn < 0 && item.quality < 50) item.quality++;
+    }
+
 }
