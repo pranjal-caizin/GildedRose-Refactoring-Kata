@@ -1,12 +1,11 @@
 package com.gildedrose;
 
-public class NormalItem {
-    Item item;
-
+public class NormalItem extends UpdatableItem {
     public NormalItem(Item item) {
-        this.item = item;
+        super(item);
     }
 
+    @Override
     void updateQuality() {
         if (item.quality > 0) item.quality--;
         item.sellIn--;
