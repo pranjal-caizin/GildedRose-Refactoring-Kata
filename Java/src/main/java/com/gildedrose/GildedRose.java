@@ -23,15 +23,9 @@ class GildedRose {
                     new BackstagePasses(item).updateQuality();
                     break;
                 default:
-                    updateQualityAndSellinForNormalItem(item);
+                    new NormalItem(item).updateQuality();
                     break;
             }
         }
-    }
-
-    private static void updateQualityAndSellinForNormalItem(Item item) {
-        if (item.quality > 0) item.quality--;
-        item.sellIn--;
-        if (item.sellIn < 0 && item.quality > 0) item.quality--;
     }
 }
