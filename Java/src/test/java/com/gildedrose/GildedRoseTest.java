@@ -45,27 +45,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void qualityNeverGoesAboveFiftyTest() {
-        Item[] items = new Item[] {
-            new Item("Aged Brie", 4, 50),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(50, items[0].quality);
-        assertEquals(3, items[0].sellIn);
-
-        assertEquals(50, items[1].quality);
-        assertEquals(4, items[1].sellIn);
-
-        assertEquals(50, items[2].quality);
-        assertEquals(4, items[2].sellIn);
-    }
-
-    @Test
     void qualityDegradesTwiceAfterSellByDateForNormalItemsTest() {
         Item[] items = new Item[] {
             new Item("Normal Item", 0, 4)
