@@ -14,4 +14,15 @@ public class BackstagePassesTest {
         assertEquals(21, item.quality );
         assertEquals(14, item.sellIn);
     }
+
+    @Test
+    void qualityIncreasesByTwoWhenSellDateIsBetweenTenAndSixTest() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20);
+        BackstagePasses backstagePasses = new BackstagePasses(item);
+
+        backstagePasses.updateQuality();
+
+        assertEquals(22, item.quality);
+        assertEquals(9, item.sellIn);
+    }
 }
