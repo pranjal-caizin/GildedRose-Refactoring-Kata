@@ -5,8 +5,8 @@ import java.util.function.Function;
 
 public class ItemFactory {
     private static final Map<String, Function<Item, UpdatableItem>> ITEM_MAP = Map.of(
-        "Aged Brie", AgedBrie::new,
-        "Backstage passes to a TAFKAL80ETC concert", BackstagePasses::new
+        ItemNameConstants.AGED_BRIE, AgedBrie::new,
+        ItemNameConstants.BACKSTAGE_PASSES, BackstagePasses::new
     );
 
     UpdatableItem updateItem(Item item) {
