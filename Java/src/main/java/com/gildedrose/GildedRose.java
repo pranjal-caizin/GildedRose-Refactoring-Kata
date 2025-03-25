@@ -17,7 +17,7 @@ class GildedRose {
                 case SULFURAS:
                     continue;
                 case AGED_BRIE:
-                    updateQualityAndSellinForAgedBrie(item);
+                    new AgedBrie(item).updateQuality();
                     break;
                 case BACKSTAGE_PASSES:
                     updateQualityAndSellinForBackstagePasses(item);
@@ -47,11 +47,4 @@ class GildedRose {
         item.sellIn--;
         if (item.sellIn < 0) item.quality = 0;
     }
-
-    private static void updateQualityAndSellinForAgedBrie(Item item) {
-        if (item.quality < 50) item.quality++;
-        item.sellIn--;
-        if (item.sellIn < 0 && item.quality < 50) item.quality++;
-    }
-
 }
