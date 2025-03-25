@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BackstagePassesTest {
     @Test
-    void qualityIncreasesByOneWhenSellDateIsAboveTen() {
+    void qualityIncreasesByOneWhenSellDateIsAboveTenTest() {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
@@ -16,7 +16,7 @@ public class BackstagePassesTest {
     }
 
     @Test
-    void qualityIncreasesByTwoWhenSellDateIsBetweenTenAndSixTest() {
+    void qualityIncreasesByTwoWhenSellDateIsInBetweenTenAndSixTest() {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
@@ -38,7 +38,7 @@ public class BackstagePassesTest {
     }
 
     @Test
-    void qualityDropsToZeroAfterConcert() {
+    void qualityDropsToZeroAfterConcertTest() {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
@@ -49,7 +49,7 @@ public class BackstagePassesTest {
     }
 
     @Test
-    void qualityNeverExceedsFiftyTest() {
+    void qualityDoesNotExceedsFiftyTest() {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
