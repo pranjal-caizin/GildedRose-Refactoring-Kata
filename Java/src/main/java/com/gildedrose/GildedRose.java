@@ -20,7 +20,7 @@ class GildedRose {
                     new AgedBrie(item).updateQuality();
                     break;
                 case BACKSTAGE_PASSES:
-                    updateQualityAndSellinForBackstagePasses(item);
+                    new BackstagePasses(item).updateQuality();
                     break;
                 default:
                     updateQualityAndSellinForNormalItem(item);
@@ -33,18 +33,5 @@ class GildedRose {
         if (item.quality > 0) item.quality--;
         item.sellIn--;
         if (item.sellIn < 0 && item.quality > 0) item.quality--;
-    }
-
-    private static void updateQualityAndSellinForBackstagePasses(Item item) {
-        if (item.quality < 50) {
-            item.quality++;
-
-            if (item.quality < 50) {
-                if (item.sellIn < 11) item.quality++;
-                if (item.sellIn < 6) item.quality++;
-            }
-        }
-        item.sellIn--;
-        if (item.sellIn < 0) item.quality = 0;
     }
 }
