@@ -38,4 +38,15 @@ public class AgedBrieTest {
         assertEquals(50, item.quality);
         assertEquals(4, item.sellIn);
     }
+
+    @Test
+    void qualityIncreasesButDoesNotExceedFiftyAfterSellDateTest() {
+        Item item = new Item("Aged Brie", 0, 49);
+        AgedBrie agedBrie = new AgedBrie(item);
+
+        agedBrie.updateQuality();
+
+        assertEquals(50, item.quality);
+        assertEquals(-1, item.sellIn);
+    }
 }
