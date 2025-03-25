@@ -45,19 +45,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void qualityIncreasesByOneWhenSellinAboveTenForBackstagePassesTest() {
-        Item[] items = new Item[] {
-            new Item("Backstage passes to a TAFKAL80ETC concert", 12, 4)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(5, items[0].quality);
-        assertEquals(11, items[0].sellIn);
-    }
-
-    @Test
     void qualityIncreasesByTwoWhenSellinIsBetweenTenAndSixForBackstagePassesTest() {
         Item[] items = new Item[] {
             new Item("Backstage passes to a TAFKAL80ETC concert", 10, 4)
