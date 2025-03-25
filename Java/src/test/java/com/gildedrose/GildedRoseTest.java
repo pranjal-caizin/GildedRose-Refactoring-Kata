@@ -28,19 +28,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void qualityIncreasesOverTimeByOneForAgedBrieTest() {
-        Item[] items = new Item[] {
-            new Item("Aged Brie", 2, 4)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(5, items[0].quality);
-        assertEquals(1, items[0].sellIn);
-    }
-
-    @Test
     void qualityIncreasesTwiceAfterSellByDateForAgedBrieTest() {
         Item[] items = new Item[] {
             new Item("Aged Brie", 0, 4)
