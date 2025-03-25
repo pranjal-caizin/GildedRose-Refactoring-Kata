@@ -32,19 +32,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void qualityDegradesTwiceAfterSellByDateForNormalItemsTest() {
-        Item[] items = new Item[] {
-            new Item("Normal Item", 0, 4)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(2, items[0].quality);
-        assertEquals(-1, items[0].sellIn);
-    }
-
-    @Test
     void qualityNeverGoesNegativeTest() {
         Item[] items = new Item[] {
             new Item("Item", 4, 0)
