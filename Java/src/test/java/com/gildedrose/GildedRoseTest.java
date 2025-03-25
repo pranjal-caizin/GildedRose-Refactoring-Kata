@@ -30,18 +30,4 @@ class GildedRoseTest {
         assertEquals(4, items[1].quality);
         assertEquals(-1, items[1].sellIn);
     }
-
-    @Test
-    void qualityNeverGoesNegativeTest() {
-        Item[] items = new Item[] {
-            new Item("Item", 4, 0)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(0, items[0].quality);
-        assertEquals(3, items[0].sellIn);
-    }
-
 }

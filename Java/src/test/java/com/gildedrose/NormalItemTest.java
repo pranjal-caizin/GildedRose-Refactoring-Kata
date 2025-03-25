@@ -27,4 +27,15 @@ public class NormalItemTest {
         assertEquals(2, item.quality);
         assertEquals(-1, item.sellIn);
     }
+
+    @Test
+    void qualityNeverGoesNegativeTest() {
+        Item item = new Item("Normal Item", 5, 0);
+        NormalItem normalItem = new NormalItem(item);
+
+        normalItem.updateQuality();
+
+        assertEquals(0, item.quality, "Quality should never be negative");
+        assertEquals(4, item.sellIn, "Sell-in should decrease by 1");
+    }
 }
