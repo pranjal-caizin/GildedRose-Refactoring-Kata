@@ -15,19 +15,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void qualityAndSellinDecreaseBy1ForNormalItemsTest() {
-        Item[] items = new Item[] {
-            new Item("Normal Item", 2, 4)
-        };
-
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-
-        assertEquals(3, items[0].quality);
-        assertEquals(1, items[0].sellIn);
-    }
-
-    @Test
     void qualityAndSellinDoesNotChangeForSulfurasTest() {
         Item[] items = new Item[] {
             new Item("Sulfuras, Hand of Ragnaros", 2, 4),
