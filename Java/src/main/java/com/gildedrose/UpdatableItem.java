@@ -7,5 +7,5 @@ abstract class UpdatableItem {
         this.item = item;
     }
 
-    abstract void updateQuality();
+    abstract void update();
 }

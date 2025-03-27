@@ -9,7 +9,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(21, item.quality );
         assertEquals(14, item.sellIn);
@@ -20,7 +20,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(22, item.quality);
         assertEquals(9, item.sellIn);
@@ -31,7 +31,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(23, item.quality);
         assertEquals(4, item.sellIn);
@@ -42,7 +42,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(0, item.quality);
         assertEquals(-1, item.sellIn);
@@ -53,7 +53,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(50, item.quality);
         assertEquals(4, item.sellIn);
@@ -64,7 +64,7 @@ public class BackstagePassesTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
         BackstagePasses backstagePasses = new BackstagePasses(item);
 
-        backstagePasses.updateQuality();
+        backstagePasses.update();
 
         assertEquals(50, item.quality);
         assertEquals(4, item.sellIn);

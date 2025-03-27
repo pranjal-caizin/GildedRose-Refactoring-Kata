@@ -6,7 +6,7 @@ public class Sulfuras extends UpdatableItem {
     }
 
     @Override
-    void updateQuality() {
+    void update() {
         //Being a legendary item, it never has to be sold or decreases in Quality
     }
 }

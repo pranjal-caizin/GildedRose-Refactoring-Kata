@@ -11,7 +11,7 @@ public class NormalItemTest {
         Item item = new Item("Normal Item", 5, 10);
         NormalItem normalItem = new NormalItem(item);
 
-        normalItem.updateQuality();
+        normalItem.update();
 
         assertEquals(9, item.quality);
         assertEquals(4, item.sellIn);
@@ -22,7 +22,7 @@ public class NormalItemTest {
         Item item = new Item("Normal Item", 0, 4);
         NormalItem normalItem = new NormalItem(item);
 
-        normalItem.updateQuality();
+        normalItem.update();
 
         assertEquals(2, item.quality);
         assertEquals(-1, item.sellIn);
@@ -33,7 +33,7 @@ public class NormalItemTest {
         Item item = new Item("Normal Item", 5, 0);
         NormalItem normalItem = new NormalItem(item);
 
-        normalItem.updateQuality();
+        normalItem.update();
 
         assertEquals(0, item.quality);
         assertEquals(4, item.sellIn);
@@ -44,7 +44,7 @@ public class NormalItemTest {
         Item item = new Item("Normal Item", 0, 1);
         NormalItem normalItem = new NormalItem(item);
 
-        normalItem.updateQuality();
+        normalItem.update();
 
         assertEquals(0, item.quality);
         assertEquals(-1, item.sellIn);

@@ -6,7 +6,7 @@ public class BackstagePasses extends UpdatableItem {
     }
 
     @Override
-    void updateQuality() {
+    void update() {
         if (item.quality < 50) {
             item.quality++;
 
