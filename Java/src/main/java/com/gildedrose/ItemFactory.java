@@ -6,7 +6,8 @@ import java.util.function.Function;
 public class ItemFactory {
     private static final Map<String, Function<Item, UpdatableItem>> ITEM_MAP = Map.of(
         ItemNameConstants.AGED_BRIE, AgedBrie::new,
-        ItemNameConstants.BACKSTAGE_PASSES, BackstagePasses::new
+        ItemNameConstants.BACKSTAGE_PASSES, BackstagePasses::new,
+        ItemNameConstants.SULFURAS, Sulfuras::new
     );
 
     UpdatableItem updateItem(Item item) {
