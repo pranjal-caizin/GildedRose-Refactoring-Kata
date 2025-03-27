@@ -7,15 +7,27 @@ public class BackstagePasses extends UpdatableItem {
 
     @Override
     void update() {
-        if (item.quality < 50) {
-            item.quality++;
+        increaseQuality();
+        decreaseSellIn();
+        resetQualityIfSellByDateIsPassed();
+    }
 
-            if (item.quality < 50) {
-                if (item.sellIn < 11) item.quality++;
-                if (item.sellIn < 6) item.quality++;
-            }
-        }
+    private void decreaseSellIn() {
         item.sellIn--;
+    }
+
+    private void resetQualityIfSellByDateIsPassed() {
         if (item.sellIn < 0) item.quality = 0;
+    }
+
+    private void increaseQuality() {
+        if(item.quality >= 50) return;
+
+        item.quality++;
+
+        if (item.quality < 50) {
+            if (item.sellIn < 11) item.quality++;
+            if (item.sellIn < 6) item.quality++;
+        }
     }
 }
