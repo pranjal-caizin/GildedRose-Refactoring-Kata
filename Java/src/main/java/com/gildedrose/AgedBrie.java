@@ -1,6 +1,8 @@
 package com.gildedrose;
 
 public class AgedBrie extends UpdatableItem {
+    private final int MAX_QUALITY = 50;
+
     public AgedBrie(Item item) {
         super(item);
     }
@@ -17,7 +19,7 @@ public class AgedBrie extends UpdatableItem {
     }
 
     private void increaseQuality() {
-        if (item.quality < 50) item.quality++;
+        if (item.quality < MAX_QUALITY) item.quality++;
     }
 }
 

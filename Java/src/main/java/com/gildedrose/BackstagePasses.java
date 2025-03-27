@@ -1,6 +1,8 @@
 package com.gildedrose;
 
 public class BackstagePasses extends UpdatableItem {
+    private final int MAX_QUALITY = 50;
+
     public BackstagePasses(Item item) {
         super(item);
     }
@@ -21,11 +23,11 @@ public class BackstagePasses extends UpdatableItem {
     }
 
     private void increaseQuality() {
-        if(item.quality >= 50) return;
+        if(item.quality >= MAX_QUALITY) return;
 
         item.quality++;
 
-        if (item.quality < 50) {
+        if (item.quality < MAX_QUALITY) {
             if (item.sellIn < 11) item.quality++;
             if (item.sellIn < 6) item.quality++;
         }
