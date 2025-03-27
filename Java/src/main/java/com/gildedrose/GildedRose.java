@@ -9,7 +9,6 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            if(item.name.equals(ItemNameConstants.SULFURAS)) continue;
             new ItemFactory().updateItem(item).updateQuality();
         }
     }
