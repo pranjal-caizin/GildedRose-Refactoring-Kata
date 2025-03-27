@@ -13,7 +13,7 @@ public class SulfurasTest {
         };
 
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.update();
 
         assertEquals(4, items[0].quality);
         assertEquals(2, items[0].sellIn);
@@ -26,7 +26,7 @@ public class SulfurasTest {
         };
 
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.update();
 
         assertEquals(4, items[0].quality);
         assertEquals(-1, items[0].sellIn);
