@@ -7,12 +7,13 @@ public class AgedBrie extends UpdatableItem {
 
     @Override
     void updateQuality() {
-        if (item.quality < 50) increaseQuality();
+        increaseQuality();
         item.sellIn--;
-        if (item.sellIn < 0 && item.quality < 50) increaseQuality();
+        if (item.sellIn < 0) increaseQuality();
     }
 
     private void increaseQuality() {
-        item.quality++;
+        if (item.quality < 50) item.quality++;
     }
 }
+
